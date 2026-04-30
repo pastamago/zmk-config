@@ -1,0 +1,2 @@
+config SHIELD_JELLYFISH_39
+    def_bool $(shields_list_contains,jellyfish_39)
