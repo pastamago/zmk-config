@@ -13,7 +13,7 @@
                 &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U
                 &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J
                 &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M
-                &kp ESC &kp LCTRL &kp LALT &kp LGUI &kp SPACE &kp BSPC &kp ENT
+                &kp ESC &kp LALT &kp LSHIFT &kp LGUI &kp SPACE &kp LCTRL &kp ENTER
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
