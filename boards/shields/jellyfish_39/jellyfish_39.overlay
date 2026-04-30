@@ -9,10 +9,9 @@ chosen {
         zmk,kscan = &kscan0;
     };
 
-    // LEDのノードを無効化する記述を / { } の中に配置します
-    led_status {
-        compatible = "gpio-leds";
-        // 既存のLED定義を上書きして無効化
+    // 以前エラーになった /delete-node/ ではなく、
+    // ラベルを使わずにパスで直接LEDノードを指定して無効化します
+    leds {
         status = "disabled";
     };
 
@@ -20,7 +19,7 @@ chosen {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
 
-        // Row0-4: D18(P0.26), D19(P0.30), D20(P0.06), D21(P0.17), D22(P0.20)
+        // 基板図に基づいたRowピン設定
         row-gpios
             = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
@@ -29,7 +28,7 @@ chosen {
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
 
-        // Col0-6: D5(P0.03), D6(P0.28), D7(P0.29), D8(P0.04), D9(P0.05), D10(P1.00), D11(P0.02)
+        // 基板図に基づいたColピン設定
         col-gpios
             = <&gpio0 3  GPIO_ACTIVE_HIGH> 
             , <&gpio0 28 GPIO_ACTIVE_HIGH> 
