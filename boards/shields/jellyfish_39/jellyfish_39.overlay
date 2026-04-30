@@ -7,19 +7,12 @@
 / {
 chosen {
         zmk,kscan = &kscan0;
-chosen {
-        zmk,kscan = &kscan0;
     };
 
-    // LEDを物理的に消すのではなく、「状態を無効（disabled）」にすることで
-    // システム上の定義を維持しつつ、ピンを解放します。
-    &led0 {
-        status = "disabled";
-    };
-    &led1 {
-        status = "disabled";
-    };
-    &led2 {
+    // LEDのノードを無効化する記述を / { } の中に配置します
+    led_status {
+        compatible = "gpio-leds";
+        // 既存のLED定義を上書きして無効化
         status = "disabled";
     };
 
@@ -47,6 +40,14 @@ chosen {
             , <&gpio0 2  GPIO_ACTIVE_HIGH> 
             ;
     };
+};
+
+// ファイルの最後（ / { } の外側）で、個別のLEDラベルを無効化します
+&led0 { status = "disabled"; };
+&led1 { status = "disabled"; };
+&led2 { status = "disabled"; };
+
+
     // エンコーダーは D0-D3 を使用
     left_encoder: encoder_left {
         compatible = "alps,ec11";
