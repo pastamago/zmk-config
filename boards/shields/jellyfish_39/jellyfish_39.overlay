@@ -9,33 +9,48 @@
         zmk,kscan = &kscan0;
     };
 
-    // マトリックスとエンコーダーでピンが重ならないように整理
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
 
         row-gpios
-            = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D14相当
             , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
 
-        // 重複を避けるため Col を D4, D7, D8, D9, D10, D11 に限定したテスト用構成
-        // 基板図 の配線に合わせて必要に応じて調整してください
         col-gpios
-            = <&gpio0 2  GPIO_ACTIVE_HIGH> // D4
-            , <&gpio0 29 GPIO_ACTIVE_HIGH> // D7
-            , <&gpio0 4  GPIO_ACTIVE_HIGH> // D8
-            , <&gpio0 5  GPIO_ACTIVE_HIGH> // D9
-            , <&gpio1 0  GPIO_ACTIVE_HIGH> // D10
-            , <&gpio0 2  GPIO_ACTIVE_HIGH> // D11
+            = <&gpio0 3  GPIO_ACTIVE_HIGH> // D5
+            , <&gpio0 28 GPIO_ACTIVE_HIGH> 
+            , <&gpio0 29 GPIO_ACTIVE_HIGH> 
+            , <&gpio0 4  GPIO_ACTIVE_HIGH> 
+            , <&gpio0 5  GPIO_ACTIVE_HIGH> 
+            , <&gpio1 0  GPIO_ACTIVE_HIGH> 
+            , <&gpio0 2  GPIO_ACTIVE_HIGH> 
             ;
+    };
+
+    // エンコーダーを使いたい場合は、必ず compatible を正しく記述
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; 
+        b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; 
+        steps = <80>;
+        status = "disabled"; // 一旦 disabled にして依存関係エラーを回避
+    };
+
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; 
+        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; 
+        steps = <80>;
+        status = "disabled"; // 一旦 disabled
     };
 };
 
-// システムLEDの干渉を確実に防ぐ
+// LEDを確実に無効化
 &led0 { status = "disabled"; };
 &led1 { status = "disabled"; };
 &led2 { status = "disabled"; };
