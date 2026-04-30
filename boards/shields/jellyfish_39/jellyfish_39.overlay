@@ -5,13 +5,14 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-chosen {
+    chosen {
         zmk,kscan = &kscan0;
     };
 
-    // 以前エラーになった /delete-node/ ではなく、
-    // ラベルを使わずにパスで直接LEDノードを指定して無効化します
+    // ラベルを使わず、パスで直接指定してLED機能を無効化します
+    // これにより「label reference (&foo)」エラーを物理的に回避します
     leds {
+        compatible = "gpio-leds";
         status = "disabled";
     };
 
@@ -19,7 +20,7 @@ chosen {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
 
-        // 基板図に基づいたRowピン設定
+        // 基板図（スクリーンショット 2026-04-30 231742.jpg）に基づく割り当て
         row-gpios
             = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
@@ -28,7 +29,6 @@ chosen {
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
 
-        // 基板図に基づいたColピン設定
         col-gpios
             = <&gpio0 3  GPIO_ACTIVE_HIGH> 
             , <&gpio0 28 GPIO_ACTIVE_HIGH> 
@@ -39,7 +39,7 @@ chosen {
             , <&gpio0 2  GPIO_ACTIVE_HIGH> 
             ;
     };
-};
+
 
 // ファイルの最後（ / { } の外側）で、個別のLEDラベルを無効化します
 &led0 { status = "disabled"; };
