@@ -1,0 +1,25 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
+
+#include "jellyfish_39.overlay"
+
+&kscan0 {
+    row-gpios
+        = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row0: D11 (P0.15)
+        , <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row1: D12 (P0.19)
+        , <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row2: D13 (P1.01)
+        , <&gpio0 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row3: D14 (P0.09)
+        , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row4: D15 (P0.10)
+        ;
+
+    col-gpios
+        = <&gpio0 4  GPIO_ACTIVE_LOW> // Col0: D4 (P0.04)
+        , <&gpio0 5  GPIO_ACTIVE_LOW> // Col1: D5 (P0.05)
+        , <&gpio1 11 GPIO_ACTIVE_LOW> // Col2: D6 (P1.11)
+        , <&gpio1 12 GPIO_ACTIVE_LOW> // Col3: D7 (P1.12)
+        , <&gpio1 13 GPIO_ACTIVE_LOW> // Col4: D8 (P1.13)
+        , <&gpio1 14 GPIO_ACTIVE_LOW> // Col5: D9 (P1.14)
+        , <&gpio1 15 GPIO_ACTIVE_LOW> // Col6: D10 (P1.15)
+        ;
+};
