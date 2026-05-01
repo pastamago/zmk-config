@@ -20,4 +20,6 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: jellyfish_39
+    shield: jellyfish_39_left
+  - board: seeeduino_xiao_ble
+    shield: jellyfish_39_right

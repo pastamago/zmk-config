@@ -5,6 +5,9 @@
 #include "jellyfish_39.overlay"
 
 &kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
+    diode-direction = "col2row";
+
     row-gpios
         = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row0: D11 (P0.15)
         , <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row1: D12 (P0.19)
@@ -21,5 +24,5 @@
         , <&gpio1 13 GPIO_ACTIVE_LOW> // Col4: D8 (P1.13)
         , <&gpio1 14 GPIO_ACTIVE_LOW> // Col5: D9 (P1.14)
         , <&gpio1 15 GPIO_ACTIVE_LOW> // Col6: D10 (P1.15)
-        ;
+        ; 
 };

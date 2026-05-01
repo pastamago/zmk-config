@@ -10,6 +10,11 @@ type: shield
 # Set this to a URL that documents the keyboard.
 url: https://example.com
 
+# 分割型であることを明示します
+siblings:
+  - jellyfish_39_left
+  - jellyfish_39_right
+
 # Add any features your keyboard supports here.
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features
 features:
