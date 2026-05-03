@@ -23,3 +23,7 @@ include:
     shield: jellyfish_split_left
   - board: seeeduino_xiao_ble
     shield: jellyfish_split_right
+
+# リセットファームウェア
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
