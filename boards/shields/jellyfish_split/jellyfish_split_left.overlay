@@ -25,3 +25,22 @@
         , <&gpio1 15 GPIO_ACTIVE_LOW> // Col6: D10 (P1.15)
         ; 
 };
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout-grid";
+        display-name = "Default Layout";
+        rows = <5>;
+        columns = <10>;
+        kscan = <&kscan0>;
+
+        /* 以下の 'keys' 定義が必要です */
+        /* 例として、マトリックス順に並べています。お使いのレイアウトに合わせて調整してください */
+        keys
+            = <&key_physical 0 0>, <&key_physical 0 1>, <&key_physical 0 2> /* ...以下略 */
+            ;
+    };
+};
