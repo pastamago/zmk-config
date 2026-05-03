@@ -1,0 +1,6 @@
+if SHIELD_JELLYFISH_SPLIT
+
+config ZMK_KEYBOARD_NAME
+    default "Jellyfish_Split"
+
+endif # SHIELD_JELLYFISH_SPLIT

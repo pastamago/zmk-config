@@ -1,6 +1,0 @@
-if SHIELD_JELLYFISH_39
-
-config ZMK_KEYBOARD_NAME
-    default "Jellyfish_39"
-
-endif # SHIELD_JELLYFISH_39

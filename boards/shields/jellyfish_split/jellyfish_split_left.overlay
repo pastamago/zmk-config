@@ -2,7 +2,7 @@
 // See https://zmk.dev/docs/development/hardware-integration/new-shield for more
 // instructions.
 
-#include "jellyfish_39.overlay"
+#include "jellyfish_split.overlay"
 
 &kscan0 {
     diode-direction = "col2row";

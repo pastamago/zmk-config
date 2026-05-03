@@ -3,8 +3,8 @@
 # for instructions.
 
 file_format: "1"
-id: jellyfish_39
-name: Jellyfish_39
+id: jellyfish_split
+name: jellyfish_split
 type: shield
 
 # Set this to a URL that documents the keyboard.
@@ -12,8 +12,8 @@ url: https://example.com
 
 # 分割型であることを明示します
 siblings:
-  - jellyfish_39_left
-  - jellyfish_39_right
+  - jellyfish_split_left
+  - jellyfish_split_right
 
 # Add any features your keyboard supports here.
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features

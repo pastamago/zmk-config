@@ -1,0 +1,5 @@
+config SHIELD_JELLYFISH_39_LEFT
+    def_bool $(shields_list_contains,jellyfish_split_left)
+
+config SHIELD_JELLYFISH_39_RIGHT
+    def_bool $(shields_list_contains,jellyfish_split_right)
