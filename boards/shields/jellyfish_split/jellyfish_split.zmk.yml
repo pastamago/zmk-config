@@ -12,8 +12,8 @@ url: https://example.com
 
 # 分割型であることを明示します
 siblings:
-  - jellyfish_split_left
-  - jellyfish_split_right
+  - JF_Split_L
+  - JF_Split_R
 
 # Add any features your keyboard supports here.
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features
