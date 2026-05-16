@@ -24,12 +24,12 @@
         default_layer {
             // メイン
             bindings = <
-                // 左手(7列)                                                                 右手(7列)
-                &kp ESC      &kp N1      &kp N2    &kp N3    &kp N4    &kp N5     &kp UP         &kp UP     &kp N6    &kp N7      &kp N8    &kp N9   &kp N0     &kp BSPC
-                &mt LSHFT N6 &kp Q       &kp W     &kp E     &kp R     &kp T      &kp RIGHT      &kp LEFT   &kp Y     &kp U       &kp I     &kp O    &kp P      &lt 1 MINUS
-                &lt 1 N7     &kp A       &kp S     &kp D     &kp F     &kp G      &kp LEFT       &kp RIGHT  &kp H     &kp J       &kp K     &kp L    &kp APOS   &kp ENTER
-                &mt LCTRL N8 &kp Z       &kp X     &kp C     &kp V     &kp B      &kp DOWN       &kp DOWN   &kp N     &kp M       &kp COMMA &kp DOT  &kp SEMI   &kp RSHFT
-                &kp LALT     &lt 2 GRAVE &tog 3    &kp F5    &none     &kp SPACE  &lt 1 F7       &lt 1 LGUI &kp SPACE &kp C_SLEEP &kp RALT  &kp RGUI &lt 2 FSLH &kp LG(LS(S)) // スクショ
+                // 左手(7列)                                                                  右手(7列)
+                &kp ESC      &kp N1      &kp N2   &kp N3   &kp N4   &kp N5     &kp UP         &kp UP     &kp N6    &kp N7      &kp N8     &kp N9    &kp N0     &kp BSPC
+                &mt LSHFT N6 &kp Q       &kp W    &kp E    &kp R    &kp T      &kp RIGHT      &kp LEFT   &kp Y     &kp U       &kp I      &kp O     &kp P      &lt 1 MINUS
+                &lt 1 N7     &kp A       &kp S    &kp D    &kp F    &kp G      &kp LEFT       &kp RIGHT  &kp H     &kp J       &kp K      &kp L     &kp APOS   &kp ENTER
+                &mt LCTRL N8 &kp Z       &kp X    &kp C    &kp V    &kp B      &kp DOWN       &kp DOWN   &kp N     &kp M       &kp COMMA  &kp DOT   &kp SEMI   &kp RSHFT
+                &kp LALT     &lt 2 GRAVE &tog 3   &kp F5   &none    &kp SPACE  &lt 1 F7       &lt 1 LGUI &kp SPACE &kp C_SLEEP &kp RALT   &kp RGUI  &lt 2 FSLH &kp LG(LS(S)) // スクショ
             >;
 
             // エンコーダーの設定
@@ -43,33 +43,33 @@
             bindings = <
                 // 左手(7列)                                                                    右手(7列)
                 &bt BT_CLR &kp F1    &kp F2    &kp F3    &kp F4    &kp F5       &kp UP          &kp UP    &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp DELETE
-                &kp LSHFT  &kp Y     &kp U     &kp I     &kp O     &kp P        &kp RIGHT       &kp LEFT  &trans    &trans    &trans    &trans    &trans    &trans
+                &trans     &kp Y     &kp U     &kp I     &kp O     &kp P        &kp RIGHT       &kp LEFT  &trans    &trans    &trans    &trans    &trans    &trans
                 &trans     &kp H     &kp J     &kp K     &kp L     &trans       &kp LEFT        &kp RIGHT &trans    &trans    &trans    &trans    &trans    &trans
-                &kp LCTRL  &kp N     &kp M     &kp F9    &kp F10   &trans       &kp DOWN        &kp DOWN  &trans    &trans    &trans    &trans    &trans    &trans
-                &kp LALT   &trans    &trans    &kp F6    &trans    &kp LS(LALT) &kp F8          &trans    &trans    &trans    &trans    &trans    &kp BSLH  &trans
+                &trans     &kp N     &kp M     &kp F9    &kp F10   &trans       &kp DOWN        &kp DOWN  &trans    &trans    &trans    &trans    &trans    &trans
+                &trans     &trans    &trans    &kp F6    &trans    &kp LS(LALT) &kp F8          &trans    &trans    &trans    &trans    &trans    &kp BSLH  &trans
             >;
 
             // エンコーダーの設定
             // 左側: ブラシサイズ（｛ / ｝） (LBKT / RBKT)
-            // 右側: 音量 (C_VOL_UP / C_VOL_DN)
-            sensor-bindings = <&inc_dec_kp LBKT RBKT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            // 右側: ホーム / エンド (HOME / END)
+            sensor-bindings = <&inc_dec_kp LBKT RBKT &inc_dec_kp HOME END>;
         };
 
         // レイヤー2 (Fn2 / &mo 2 方向キー / ファンクションキー)
         fn2_layer {
             bindings = <
-                // 左手(7列)                                                             右手(7列)
-                &trans &trans &trans   &trans   &trans    &trans &trans    &trans &trans &trans   &trans   &trans    &trans &trans
-                &trans &trans &trans   &trans   &trans    &trans &trans    &trans &trans &trans   &trans   &trans    &trans &trans
-                &trans &trans &trans   &kp UP   &trans    &trans &trans    &trans &trans &trans   &kp UP   &trans    &trans &trans
-                &trans &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans    &trans &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-                &trans &trans &trans   &trans   &trans    &trans &trans    &trans &trans &trans   &trans   &trans    &trans &trans
+                // 左手(7列)                                                  右手(7列)
+                &trans  &trans  &trans   &trans   &trans    &trans  &trans    &trans  &trans  &trans   &trans   &trans    &trans  &trans
+                &trans  &trans  &trans   &trans   &trans    &trans  &trans    &trans  &trans  &trans   &trans   &trans    &trans  &trans
+                &trans  &trans  &trans   &kp UP   &trans    &trans  &trans    &trans  &trans  &trans   &kp UP   &trans    &trans  &trans
+                &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT &trans  &trans    &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT &trans  &trans
+                &trans  &trans  &trans   &trans   &trans    &trans  &trans    &trans  &trans  &trans   &trans   &trans    &trans  &trans
             >;
 
             // エンコーダーの設定
-            // 左側: マウスホイール (SCROLL_UP / SCROLL_DOWN)
-            // 右側: 音量 (C_VOL_UP / C_VOL_DN)
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            // 左側: アップ / ダウン (UP / DOWN)
+            // 右側: レフト / ライト (LEFT / RIGHT)
+            sensor-bindings = <&inc_dec_kp 	PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         // レイヤー3（文字入力・ゲーム用） (Fn3 / &tog 3)
