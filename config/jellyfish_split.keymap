@@ -6,6 +6,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+// 全体のホールド・タップ判定時間を設定（例：200ミリ(0.2)秒）
+&lt {
+    tapping-term-ms = <250>;
+};
+
+&mt {
+    tapping-term-ms = <250>;
+};
 
 / {
     keymap {
