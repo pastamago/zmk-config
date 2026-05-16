@@ -6,27 +6,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&lt {
+    tapping-term-ms = <250>;
+};
+
 / {
-    behaviors {
-        // 短押しでF7、長押し（250ms）でレイヤー2
-        lt_f7: layer_tap_f7 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        // 【新設】短押しで何もせず（あるいは任意のキー）、長押し（250ms）でレイヤー1
-        lt_mo1: layer_tap_mo1 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>; // ここで250msを指定
-            bindings = <&mo>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
