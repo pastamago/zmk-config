@@ -30,7 +30,7 @@
     };
 };
 
-/* エンコーダーとLEDの定義 */
+/* エンコーダーの定義 */
 / {
     /* エンコーダーの定義 */
     left_encoder: encoder_left {
@@ -44,17 +44,6 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
         triggers-per-rotation = <20>;
-    };
-
-    /* LED (SK6812MINI-E) 28個の定義 */
-    led_strip: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-        reg = <0>;
-        spi-max-frequency = <4000000>;
-        chain-length = <28>; 
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
 
@@ -73,12 +62,24 @@
     };
 };
 
+/* SPI設定とLED */
 &spi0 {
     compatible = "nordic,nrf-spim";
     status = "okay";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+
+    /* ルート直下からここに移動させました */
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+        chain-length = <28>; 
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
 };
 
 // 本体のLEDインジケータ（必要に応じて）
