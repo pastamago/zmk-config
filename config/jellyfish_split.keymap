@@ -6,9 +6,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-&lt {
-    tapping-term-ms = <250>;
-};
 
 / {
     keymap {
@@ -22,7 +19,7 @@
                 &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T     &kp RIGHT       &kp LEFT  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp MINUS
                 &mo 1      &kp A     &kp S     &kp D     &kp F     &kp G     &kp LEFT        &kp RIGHT &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp ENTER
                 &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B     &kp DOWN        &kp DOWN  &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                &kp LALT   &mo 2     &tog 3    &kp F5    &none     &kp SPACE &kp DOWN        &kp LGUI  &kp SPACE &kp SLEEP &kp RALT  &kp RGUI  &kp BSLH  &kp NUBS
+                &kp LALT   &mo 2     &tog 3    &kp F5    &none     &kp SPACE &kp F7        &kp LGUI  &kp SPACE &kp SLEEP &kp RALT  &kp RGUI  &kp BSLH  &kp NUBS
             >;
 
             // エンコーダーの設定
@@ -36,10 +33,10 @@
             bindings = <
                 // 左手(7列)                                                             右手(7列)
                 &kp ESC   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp UP       &kp UP    &kp F6    &kp F7    &kp F8    &kp F9    &kp F0    &kp DELETE
-                &kp LSHFT &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LEFT     &trans &trans &trans &trans &trans &trans &trans
-                &trans    &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp RIGHT    &trans &trans &trans &trans &trans &trans &trans
-                &kp LCTRL &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp DOWN     &trans &trans &trans &trans &trans &trans &trans
-                &kp LALT  &kp SPACE &kp SLEEP &kp RALT  &kp RGUI  &kp BSLH  &kp NUBS     &trans &trans &trans &trans &trans &trans &trans
+                &kp LSHFT &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LEFT     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp RIGHT    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &kp LCTRL &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp DOWN     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &kp LALT  &kp SPACE &kp SLEEP &kp RALT  &kp RGUI  &kp BSLH  &kp NUBS     &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
 
             // エンコーダーの設定
